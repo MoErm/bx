@@ -9,11 +9,14 @@
 export default {
   data () {
     return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Hello World!1111'
+      msg: 'Hello World!111',
+      list:[{
+        issue: '1',
+        rate:7,
+        data:100,
+        time:"01 22:33:44"
+      }]
+
     }
   },
   methods:{

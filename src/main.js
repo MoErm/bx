@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from './components/Hello'
-import Hello2 from './components/Hello2'
+//import Hello from './components/Hello'
+//import Hello2 from './components/Hello2'
 
 Vue.use(Router)
 
@@ -18,13 +18,34 @@ var router = new Router()
 // 创建的组件构造函数，也可以是一个组件选项对象。
 // 稍后我们会讲解嵌套路由
 router.map({
-  '/hello': {
-    component: Hello
+  '/invest': {
+    component: function (resolve) {
+      require(['./components/invest.vue'], resolve)
+    }
   },
   '/hello2': {
-    component: Hello2
+    component: function (resolve) {
+      require(['./components/Hello2.vue'], resolve)
+    }
+
   }
+
 })
+//路由重定向
+router.redirect({
+  // 任意未匹配路径到 /home
+  '*': '/invest',
+
+  //'/financialPlanner': '/financialPlanner/customers',
+  //// '/vip': '/vip/homepage',
+  //'/vip': '/vip/expect',	//敬请期待
+  //'/help':'/help/index',
+  //'/youpin':'/youpin/index'
+
+  // 重定向可以包含动态片段，而且重定向片段必须匹配
+  //'/user/:userId': '/profile/:userId',
+
+});
 
 // 现在我们可以启动应用了！
 // 路由器会创建一个 App 实例，并且挂载到选择符 #app 匹配的元素上。
