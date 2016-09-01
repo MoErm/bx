@@ -1,0 +1,38 @@
+@import "../js/need/layer.css";
+
+$border: #edf1f4;
+$fontColor: #535353;
+$red: #e71b14;
+$blue: #2f44a1;
+$bgColor:#edf1f4;
+
+// rem.scss
+@charset "utf-8";
+$divide: 10;
+$pswWidth: 320;
+$ppr: 320px/$divide/1rem ;// 定义单位
+
+@charset "utf-8";
+$divide: 10;
+$pswWidth: 320;
+$ppr: 320px/$divide/1rem;// 定义单位
+
+// https://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+@mixin toRem($property, $values...) {
+  $max: length($values);
+  $remValues: '';
+  @for $i from 1 through $max {
+    $value: nth($values, $i) * $divide / $pswWidth;
+    $remValues: #{$remValues + $value}rem;
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+  #{$property}: $remValues;
+}
+body{
+  background: $bgColor;
+  font-family: Helvetica,'Heiti','SC';}
+*{
+  margin: 0px;
+  padding: 0px;}

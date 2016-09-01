@@ -1,0 +1,80 @@
+@import "../assets/pubilc.scss";
+
+.property_info{
+  background-color: white;
+  position: relative;
+  padding: 1rem;
+  font-size: 1rem;
+  .info_a{
+
+  }
+  .info_b{
+    color: $red;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+  }
+  .info_c{
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: lighten($fontColor, 20%);
+  }
+  .info_btn{
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    padding: 0.4rem 0.6rem;
+    background-color: #f7f8fd;
+    border: none;
+    color: #8f9bcd;
+    font-size: 1.2rem;
+  }
+}
+.property_list{
+  padding: 1rem 1rem 0rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  span{
+    width: 33%;
+    color: lighten($fontColor, 20%);
+  }
+  .span_1{  }
+  .span_2{
+    text-align: center;
+  }
+  .span_3{
+    text-align: right;
+  }
+}
+.property_bg{
+  background-color: white;
+}
+.property_table{
+  margin: 0.4rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid lighten($fontColor, 60%);
+  span{
+    width: 33%;
+    padding: 0.8rem 0;
+  }
+  .span_1{
+    small{
+      color: lighten($fontColor, 20%);
+    }
+  }
+  .span_2{
+    text-align: center;
+    line-height: 38px;
+  }
+  .span_3{
+    text-align: right;
+    line-height: 38px;
+    em{
+      font-style: normal;
+      color: $red;
+    }
+  }
+}

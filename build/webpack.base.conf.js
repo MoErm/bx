@@ -1,5 +1,6 @@
 var path = require('path')
 var config = require('../config')
+var webpack = require('webpack')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 
@@ -18,7 +19,9 @@ module.exports = {
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'components': path.resolve(__dirname, '../src/components'),
+      'views': path.resolve(__dirname, '../src/views'),
+      'js': path.resolve(__dirname, '../src/js')
     }
   },
   resolveLoader: {
@@ -52,6 +55,7 @@ module.exports = {
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
+      { test: /\.(scss|sass)$/, loader: 'style-loader!css-loader!sass-loader'},
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url',
@@ -62,6 +66,17 @@ module.exports = {
       }
     ]
   },
+  //externals: [{
+  //  'webpack-zepto': '$'
+  //}],
+  //jquery组件添加
+  //plugins:[
+  //  new webpack.ProvidePlugin({
+  //    $:"jquery",
+  //    jQuery:"jquery",
+  //    "window.jquery":"jquery"
+  //  })
+  //],
   vue: {
     loaders: utils.cssLoaders()
   }
